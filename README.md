@@ -98,3 +98,24 @@ This method returns an Optional object that may contain the server object if it 
 ![image](https://user-images.githubusercontent.com/66437295/228351332-eab087c2-182d-447c-ab42-0725051fc0d6.png)
 
 
+- <h3> Get Servers by name </h3>
+### Get request to /getServer/name
+When this endpoint is hit, it retrieves a server by its name by sending a GET request with the ID in the URL parameter. The server object is returned in a ResponseEntity with appropriate HTTP status codes based on whether the server was found or not.
+```
+public ResponseEntity<List<Server>> getServerByName(String name) {
+        List<Server> servers= serverRepository.findByName(name);
+        if(servers.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.of(Optional.of(servers));
+
+    }
+```
+``` Response Status : 200 found```
+![image](https://user-images.githubusercontent.com/66437295/228353644-bbfedc62-ce44-479c-981c-e41602a772d7.png)
+
+``` Response Status : 404 not found```
+![image](https://user-images.githubusercontent.com/66437295/228354045-671ce597-53cd-4943-a61f-ca390b2823b1.png)
+
+
+
