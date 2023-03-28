@@ -30,7 +30,7 @@ MongoDB
 ```/getServer/{name}``` Gives the object with the name passed in url
 
 Code screenshot:
-![image](https://user-images.githubusercontent.com/66437295/228335924-0b6f1f4a-b2c7-444c-96e7-a7259550a2a4.png)
+![image](https://user-images.githubusercontent.com/66437295/228337213-da39a026-20e7-4bbe-be5b-0842751fdaeb.png)
 
 
 
