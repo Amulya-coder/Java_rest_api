@@ -32,6 +32,7 @@ MongoDB
 Code screenshot:
 ![image](https://user-images.githubusercontent.com/66437295/228337213-da39a026-20e7-4bbe-be5b-0842751fdaeb.png)
 
+![image](https://user-images.githubusercontent.com/66437295/228434809-6c4511df-9471-4348-9f8e-1c4a81d6a62a.png)
 
 
 ## Rest api endpoints
