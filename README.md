@@ -48,8 +48,7 @@ Code screenshot:
 
 ## Checking Api using Postman
 
-- <h3> Adding Server </h3>
-
+### 1. Adding Server
 ### Post request to /createServer
 When this endpoint is hit in postman, the createServer() method is invoked in sprinboot controller which accepts a Server object in the request body and created the objects in the database.
 The `serverService.addServer(server)` method is called with the Server object as a parameter, which adds the server to the system and returns a message indicating whether the operation was successful or not.
@@ -59,12 +58,14 @@ The `serverService.addServer(server)` method is called with the Server object as
         return serverService.addServer(server);
     }
 ```
-
+<b>Server is added</b>
 ![create_server](https://user-images.githubusercontent.com/66437295/228340951-c348bdb6-970b-481a-a17b-076f66d7d3c4.jpg)
 
-- <h3> Get Servers </h3>
+
+
+### 2. Get Servers
 ### Get request to /getServers
-When this endpoint is hit in postman, the getAllServers() method is invoked. This method returns a list of Server objects that are retrieved from the system through the serverService.getAllServers() method call. 
+When this endpoint is hit in postman, the getAllServers() method is invoked in ServerService class. This method returns a list of Server objects that are retrieved from the system through the serverService.getAllServers() method call. 
 
 ```
 @GetMapping("/getServers")
@@ -76,9 +77,12 @@ Here we get all the servers present in database
 
 ![get_allservers](https://user-images.githubusercontent.com/66437295/228347001-2827d413-d3fd-4001-9260-bbcf00acef37.jpg)
 
-- <h3> Get Servers by id </h3>
+
+
+### 3. Get Servers by id
 ### Get request to /getServers/id
 When this endpoint is hit, it retrieves a server by its ID by sending a GET request with the ID in the URL parameter. The server object is returned in a ResponseEntity with appropriate HTTP status codes based on whether the server was found or not.
+This method returns an Optional object that may contain the server object if it is present in the database.
 
 ```
 public ResponseEntity<Optional<Server>> getServerById(long id) {
@@ -89,18 +93,19 @@ public ResponseEntity<Optional<Server>> getServerById(long id) {
         return ResponseEntity.of(Optional.of(server));
     }
 ```
-This method returns an Optional object that may contain the server object if it is present in the database.
 
-```Response Status : 200 found```
+```Response Status : 200 ok```
 ![get_server_byid](https://user-images.githubusercontent.com/66437295/228349702-f582e07e-e5af-4012-b682-ceb6302c731f.jpg)
 
-```Response Status : 404 not found```
+
+```Response Status : 404 not found``` <b>When id not found</b> 
 ![image](https://user-images.githubusercontent.com/66437295/228351332-eab087c2-182d-447c-ab42-0725051fc0d6.png)
 
 
-- <h3> Get Servers by name </h3>
+
+### 4. Get Servers by name
 ### Get request to /getServer/name
-When this endpoint is hit, it retrieves a server by its name by sending a GET request with the ID in the URL parameter. The server object is returned in a ResponseEntity with appropriate HTTP status codes based on whether the server was found or not.
+When this endpoint is hit in postman, it retrieves a server by its name by sending a GET request with the ID in the URL parameter. The server object is returned in a ResponseEntity with appropriate HTTP status codes based on whether the server was found or not.
 ```
 public ResponseEntity<List<Server>> getServerByName(String name) {
         List<Server> servers= serverRepository.findByName(name);
@@ -111,11 +116,31 @@ public ResponseEntity<List<Server>> getServerByName(String name) {
 
     }
 ```
-``` Response Status : 200 found```
+``` Response Status : 200 ok```
 ![image](https://user-images.githubusercontent.com/66437295/228353644-bbfedc62-ce44-479c-981c-e41602a772d7.png)
 
-``` Response Status : 404 not found```
+``` Response Status : 404 not found``` <b> When name not found</b>
 ![image](https://user-images.githubusercontent.com/66437295/228354045-671ce597-53cd-4943-a61f-ca390b2823b1.png)
 
 
+
+### 5. Delete Server by Id
+### Delete request to /deleteServer/id
+This methods in the ServerService class deletes the object with the given id passed in the url.
+```
+public String deleteServer(long id) {
+        Optional<Server> server=serverRepository.findById(id);
+        serverRepository.deleteById(id);
+        return "Server deleted : " + server;
+    }
+```
+
+Here server <b>deleted</b> from the database
+![image](https://user-images.githubusercontent.com/66437295/228431470-0ebc1222-4409-4465-8b32-b43a1b53d923.png)
+
+![image](https://user-images.githubusercontent.com/66437295/228432494-3a14a3fe-8df6-41ab-b09e-0d68cd44bd93.png)
+
+
+### MongoDB database
+![image](https://user-images.githubusercontent.com/66437295/228432800-3026f410-2fc7-49f1-8500-e42150b4b55c.png)
 
