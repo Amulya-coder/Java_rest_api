@@ -27,6 +27,12 @@ Create the following Directory structure under:<br/>
 - repository
 - service
 
+### Creating MVC model for our api
+We are creating a spring project using spring intialiser having a main java class named SpringbootMongodbApplication.
+
+![image](https://user-images.githubusercontent.com/66437295/228762985-f26970ed-ff38-4ed0-88ab-306da8e1db52.png)
+
+
 ### Defining the model
 Create <b>Server</b> class under the model package. The structure of the mongoDB user instance is defined in this class.
 ```
