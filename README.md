@@ -257,15 +257,15 @@ Code screenshot:
 
 
 ## Rest api endpoints
-- Put a server ```http://localhost:8080/createServer``` add "server" object in JSON form.
+- Put a server ```http://localhost:8080/createServer``` add server object in json form.
 
-- GET servers ```http://localhost:8080/getServers``` returns a list of "server" objects.
+- GET servers ```http://localhost:8080/getServers``` returns a list of server objects.
 
-- GET server by id ```http://localhost:8080/getServers/{id}``` returns a "server" object matching with id.
+- GET server by id ```http://localhost:8080/getServers/{id}``` returns a server object matching with id.
 
-- GET servers by name ```localhost:8080/getServer/{name}``` returns a list of "server" objects matching with name.
+- GET servers by name ```localhost:8080/getServer/{name}``` returns a list of server objects matching with name.
 
-- DELETE server by id ```http://127.0.0.1:2017/deleteServer/{id}``` Deletes a "server" object matching with id.
+- DELETE server by id ```http://127.0.0.1:2017/deleteServer/{id}``` Deletes a server object matching with id.
 
 
 ## Testinh Api using Postman
