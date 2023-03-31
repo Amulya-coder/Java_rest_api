@@ -268,7 +268,7 @@ Code screenshot:
 - DELETE server by id ```http://127.0.0.1:2017/deleteServer/{id}``` Deletes a server object matching with id.
 
 
-## Testinh Api using Postman
+## Testind Api using Postman
 
 ### 1. Adding Server
 ### Post request to /createServer
