@@ -263,9 +263,9 @@ Code screenshot:
 
 - GET server by id ```http://localhost:8080/getServers/{id}``` returns a server object matching with id.
 
-- GET servers by name ```localhost:8080/getServer/{name}``` returns a list of server objects matching with name.
+- GET servers by name ```http://localhost:8080/getServer/{name}``` returns a list of server objects matching with name.
 
-- DELETE server by id ```http://127.0.0.1:2017/deleteServer/{id}``` Deletes a server object matching with id.
+- DELETE server by id ```http://localhost:8080/deleteServer/{id}``` Deletes a server object matching with id.
 
 
 ## Testing Api using Postman
